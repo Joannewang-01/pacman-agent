@@ -28,8 +28,6 @@ from contest.game import Directions
 from contest.util import nearestPoint
 from queue import PriorityQueue
 
-
-
 NUM_TRAINING = 0
 TRAINING = False
 
