@@ -454,7 +454,7 @@ class OffensiveReflexAgent(ReflexCaptureAgent):
                     fringe.append((nbr_x, nbr_y, dist + 1))
             # no food found
             return None
-###########################################################
+     ######## update get_features  function again #########
     def get_features(self, game_state, action):
         features = util.Counter()
         successor = self.get_successor(game_state, action)
