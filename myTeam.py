@@ -407,22 +407,13 @@ class OffensiveReflexAgent(ReflexCaptureAgent):
             features["#-of-ghosts-1-step-away"] = sum(
                 (next_x, next_y) in Actions.getLegalNeighbors(g, walls) for g in ghosts)
 
-            # if len(ghosts) > 0:
-            #   minGhostDistance = min([self.agentInstance.getMazeDistance(agentPosition, g) for g in ghosts])
-            #   if minGhostDistance < 3:
-            #     features["minGhostDistance"] = minGhostDistance
 
-            # successor = self.agentInstance.getSuccessor(gameState, action)
-            # features['successorScore'] = self.agentInstance.getScore(successor)
 
             # if there is no danger of ghosts then add the food feature
             if not features["#-of-ghosts-1-step-away"] and food[next_x][next_y]:
                 features["eats-food"] = 1.0
 
-            # capsules = self.agentInstance.getCapsules(gameState)
-            # if len(capsules) > 0:
-            #   closestCap = min([self.agentInstance.getMazeDistance(agentPosition, cap) for cap in self.agentInstance.getCapsules(gameState)])
-            #   features["closestCapsule"] = closestCap
+
 
             dist = self.closestFood((next_x, next_y), food, walls)
             if dist is not None:
